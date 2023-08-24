@@ -1,0 +1,13 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+    <div class="container my-4">
+        <h1>Подтверждение удаления блюда</h1>
+        <p>Вы уверены, что хотите удалить блюдо "{{ dish.name }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Удалить</button>
+            <a href="{% url 'dish-list' %}" class="btn btn-secondary ml-2">Отмена</a>
+        </form>
+    </div>
+{% endblock %}
